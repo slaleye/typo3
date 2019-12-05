@@ -33,5 +33,11 @@ call_user_func(
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('memory', 'Configuration/TypoScript', 'Memory');
 
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_memory_domain_model_cards', 'EXT:memory/Resources/Private/Language/locallang_csh_tx_memory_domain_model_cards.xlf');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_memory_domain_model_cards');
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_memory_domain_model_highscore', 'EXT:memory/Resources/Private/Language/locallang_csh_tx_memory_domain_model_highscore.xlf');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_memory_domain_model_highscore');
+
     }
 );

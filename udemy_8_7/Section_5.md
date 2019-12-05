@@ -63,3 +63,72 @@ Highscore =>leaderboard
 Click SAVE
 IGnore warning message
 Click OK on success
+
+## Create Two Models
+* Drag and drop New Model Object 
+* Click on Show Advanced Options
+
+**DOmain Obkject Settings**
+DOmain Object Type : Entity
+is aggregate root ? : Checked (A database table will be created
+for this model, a repository will be create),
+Don't need an aggregate root if object is a part of another object
+
+**DEfault Action**
+CRUD
+board will act like 'list'
+rest of the card will be done in the backend
+Could have created the board action here under 'custom actions'
+as well
+
+**Properties**
+Add new :
+card : image
+    set allowed number of file : 1
+    set is required :checked
+    IS excclude field (to show for admins)
+    Admin can edit it but not the editor groups
+    
+ exclude l10n_mode = exclude: for multilanguage support
+ leave it default
+ 
+ Create  a new Model Object: Highscore
+ type: entity. aggregate rot
+ 
+ 
+ Properties: 
+ username: string, required
+ score: integer, required
+
+Save everything
+and Install Extension 'Memory'
+
+Notice a new Module added to the Admin Tools,
+Ned to be configured later, now shows an error message when clicked on it
+>Could not analyse class: "Slaleye\Memory\Controller\HighscoreController"
+ maybe not loaded or no autoloader? Class Slaleye\Memory\Controller\HighscoreController does not exist
+
+Also in page , plugin memory is available
+
+## Create pages
+ create new pages : standard 'Memory' and folder 'Memory'
+ Edit Memory page
+  add content  Plugin : Memory
+  General
+    add headline: memory
+    set type : hidden
+  Plugin
+    add Record Storage page  'Memory' folder
+## Edit Root Template
+Click on root page, Template /Edit whole records
+
+Go to Includes, add
+Memory (Memory ) to Include static from extensions.
+
+## uploading Pictures into the backend
+Got to File module /Filelist/
+Create folder: udemy_course/memory
+
+Go to Folder Memory then List Module
+and create 4 records of type cards and add the images respectively.
+  
