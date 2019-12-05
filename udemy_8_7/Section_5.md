@@ -99,3 +99,36 @@ card : image
  Properties: 
  username: string, required
  score: integer, required
+
+Save everything
+and Install Extension 'Memory'
+
+Notice a new Module added to the Admin Tools,
+Ned to be configured later, now shows an error message when clicked on it
+>Could not analyse class: "Slaleye\Memory\Controller\HighscoreController"
+ maybe not loaded or no autoloader? Class Slaleye\Memory\Controller\HighscoreController does not exist
+
+Also in page , plugin memory is available
+
+## Create pages
+ create new pages : standard 'Memory' and folder 'Memory'
+ Edit Memory page
+  add content  Plugin : Memory
+  General
+    add headline: memory
+    set type : hidden
+  Plugin
+    add Record Storage page  'Memory' folder
+## Edit Root Template
+Click on root page, Template /Edit whole records
+
+Go to Includes, add
+Memory (Memory ) to Include static from extensions.
+
+## uploading Pictures into the backend
+Got to File module /Filelist/
+Create folder: udemy_course/memory
+
+Go to Folder Memory then List Module
+and create 4 records of type cards and add the images respectively.
+  
