@@ -1,0 +1,28 @@
+{
+    "name": "slaleye/memory",
+    "type": "typo3-cms-extension",
+    "description": "Udemy Course; Memory Game",
+    "authors": [
+        {
+            "name": "Slaleye",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^8.7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Slaleye\\Memory\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Slaleye\\Memory\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "memory": "self.version",
+        "typo3-ter/memory": "self.version"
+    }
+}

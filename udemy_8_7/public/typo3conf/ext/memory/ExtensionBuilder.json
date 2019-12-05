@@ -1,0 +1,61 @@
+{
+    "modules": [],
+    "properties": {
+        "backendModules": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "Highscore=>leaderboard"
+                },
+                "description": "",
+                "key": "highscore",
+                "mainModule": "tools",
+                "name": "Highscore",
+                "tabLabel": ""
+            }
+        ],
+        "description": "Udemy Course; Memory Game",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 8.7.0-8.7.99\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "skipGenerateDocumentationTemplate": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "8.7.0-8.7.99",
+            "version": "1.0.0"
+        },
+        "extensionKey": "memory",
+        "name": "Memory",
+        "originalExtensionKey": "",
+        "originalVendorName": "",
+        "persons": [
+            {
+                "company": "Slaleye",
+                "email": "",
+                "name": "Slaleye",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "Game => board",
+                    "noncacheableActions": "Game => board",
+                    "switchableActions": ""
+                },
+                "description": "",
+                "key": "game",
+                "name": "Memory"
+            }
+        ],
+        "vendorName": "Slaleye"
+    },
+    "wires": [],
+    "log": {
+        "last_modified": "2019-12-05 10:50",
+        "extension_builder_version": "8.10.4",
+        "be_user": " (1)"
+    }
+}
