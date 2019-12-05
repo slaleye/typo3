@@ -63,3 +63,39 @@ Highscore =>leaderboard
 Click SAVE
 IGnore warning message
 Click OK on success
+
+## Create Two Models
+* Drag and drop New Model Object 
+* Click on Show Advanced Options
+
+**DOmain Obkject Settings**
+DOmain Object Type : Entity
+is aggregate root ? : Checked (A database table will be created
+for this model, a repository will be create),
+Don't need an aggregate root if object is a part of another object
+
+**DEfault Action**
+CRUD
+board will act like 'list'
+rest of the card will be done in the backend
+Could have created the board action here under 'custom actions'
+as well
+
+**Properties**
+Add new :
+card : image
+    set allowed number of file : 1
+    set is required :checked
+    IS excclude field (to show for admins)
+    Admin can edit it but not the editor groups
+    
+ exclude l10n_mode = exclude: for multilanguage support
+ leave it default
+ 
+ Create  a new Model Object: Highscore
+ type: entity. aggregate rot
+ 
+ 
+ Properties: 
+ username: string, required
+ score: integer, required
