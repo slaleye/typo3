@@ -20,6 +20,7 @@ return [
             'bootstrap_package' => 'a:8:{s:16:"disablePageTsRTE";s:1:"0";s:27:"disablePageTsBackendLayouts";s:1:"0";s:20:"disablePageTsTCEMAIN";s:1:"0";s:20:"disablePageTsTCEFORM";s:1:"0";s:28:"disablePageTsContentElements";s:1:"0";s:20:"disableCssProcessing";s:1:"0";s:24:"disableGoogleFontCaching";s:1:"0";s:17:"disableFontLoader";s:1:"0";}',
             'extension_builder' => 'a:3:{s:15:"enableRoundtrip";s:1:"1";s:15:"backupExtension";s:1:"1";s:9:"backupDir";s:35:"uploads/tx_extensionbuilder/backups";}',
             'memory' => 'a:0:{}',
+            'memory_game_fluid_theme' => 'a:0:{}',
             'memory_game_theme' => 'a:0:{}',
             'rsaauth' => 'a:1:{s:18:"temporaryDirectory";s:0:"";}',
             'rte_ckeditor' => 'a:1:{s:15:"ckeditorVersion";s:6:"latest";}',
