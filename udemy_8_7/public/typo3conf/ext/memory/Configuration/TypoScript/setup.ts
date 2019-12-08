@@ -73,3 +73,16 @@ module.tx_memory_tools_memoryhighscore {
         layoutRootPaths.1 = {$module.tx_memory_highscore.view.layoutRootPath}
     }
 }
+
+# Include CSS and JS  for memory
+page {
+    includeCSS {
+        memory_game_style = EXT:memory/Resources/Public/Css/memory_style.css
+    }
+    includeJSFooterlibs {
+        memory_game_jquery_ui = EXT:memory/Resources/Public/JavaScript/Js/jquery-ui.min.js
+    }
+    includeJSFooter {
+        memory_game_js = EXT:memory/Resources/Public/JavaScript/Js/memory_script.js
+    }
+}

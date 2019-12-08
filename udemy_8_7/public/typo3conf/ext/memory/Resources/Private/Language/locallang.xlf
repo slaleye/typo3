@@ -18,6 +18,10 @@
 			<trans-unit id="tx_memory_domain_model_highscore.score">
 				<source>Score</source>
 			</trans-unit>
+			<trans-unit id="tx_memory_domain_model_highscore.flipcard">
+				<source>Click to flip Card</source>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>
