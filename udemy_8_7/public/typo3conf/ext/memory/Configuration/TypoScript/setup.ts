@@ -9,7 +9,8 @@ plugin.{extension.shortExtensionKey}_{plugin.key} {
         layoutRootPaths.1 = {$plugin.tx_memory_game.view.layoutRootPath}
     }
     persistence {
-        storagePid = {$plugin.tx_memory_game.persistence.storagePid}
+        # Disable to force Extbase to use defined Storage PiD
+        #storagePid = {$plugin.tx_memory_game.persistence.storagePid}
         #recursive = 1
     }
     features {
