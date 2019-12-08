@@ -32,7 +32,19 @@ class GameController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function boardAction()
     {
+        // Step 1: Get all cards from the DB
         $cards = $this->cardsRepository->findAll();
-        $this->view->assign('cardss', $cards);
+
+        // Do this twice to find a matching cards
+        $duplicate_cards = $this->cardsRepository->findAll();
+
+        // merge duplicate and original cards
+        $cards = array_merge($cards,$duplicate_cards);
+
+        // Shuffle the cards to randomize card boards
+        shuffle($cards);
+
+        //Assign Shuffled cards to the view
+        $this->view->assign('cards', $cards);
     }
 }
