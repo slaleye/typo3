@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-12-05T23:42:33Z" product-name="memory">
+		<header/>
+		<body>
+			<trans-unit id="username.description">
+				<source>username</source>
+			</trans-unit>
+			<trans-unit id="score.description">
+				<source>score</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

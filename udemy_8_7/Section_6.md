@@ -143,3 +143,43 @@ ext_tables.php
  extensionBuilder.json
  no changes in that folder, automatic generated extensionbuilder properties
  
+## Lesson 12 : Creating FlexForms
+Flex form: XML file, extends the editor of content elements, Live codi
+
+````xml
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:extkey/Resources/Private/Language/Backend.xlf:settings.registration.title</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <!-- Add settings here ... -->
+
+                    <!-- Example setting: input field with name settings.timeRestriction -->
+                    <settings.includeCategories>
+                        <TCEforms>
+                            <label>LLL:EXT:example/Resources/Private/Language/Backend.xlf:settings.registration.includeCategories</label>
+                            <config>
+                                <type>check</type>
+                                <default>0</default>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_package/Resources/Private/Language/Backend.xlf:setting.registration.includeCategories.title</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </settings.includeCategories>
+
+                    <!-- end of settings -->
+
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>
+````

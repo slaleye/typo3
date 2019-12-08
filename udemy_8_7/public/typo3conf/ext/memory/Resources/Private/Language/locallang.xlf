@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-12-05T23:42:33Z" product-name="memory">
+		<header/>
+		<body>
+			<trans-unit id="tx_memory_domain_model_cards">
+				<source>Cards</source>
+			</trans-unit>
+			<trans-unit id="tx_memory_domain_model_cards.card">
+				<source>Card</source>
+			</trans-unit>
+			<trans-unit id="tx_memory_domain_model_highscore">
+				<source>Highscore</source>
+			</trans-unit>
+			<trans-unit id="tx_memory_domain_model_highscore.username">
+				<source>Username</source>
+			</trans-unit>
+			<trans-unit id="tx_memory_domain_model_highscore.score">
+				<source>Score</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
