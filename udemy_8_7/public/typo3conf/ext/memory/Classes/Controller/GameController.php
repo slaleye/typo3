@@ -33,10 +33,10 @@ class GameController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     public function boardAction()
     {
         // Step 1: Get all cards from the DB
-        $cards = $this->cardsRepository->findAll();
+        $cards = $this->cardsRepository->findAll()->toArray();
 
         // Do this twice to find a matching cards
-        $duplicate_cards = $this->cardsRepository->findAll();
+        $duplicate_cards = $this->cardsRepository->findAll()->toArray();
 
         // merge duplicate and original cards
         $cards = array_merge($cards,$duplicate_cards);
