@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <T3DataStructure>
-    <sheet>
+    <sheets>
         <sDEF>
             <ROOT>
                 <TCEforms>
@@ -43,7 +43,6 @@
                     </settings.coverImage>
                 </el>
             </ROOT>
-
         </sDEF>
-    </sheet>
+    </sheets>
 </T3DataStructure>

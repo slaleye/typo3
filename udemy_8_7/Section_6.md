@@ -183,3 +183,20 @@ Flex form: XML file, extends the editor of content elements, Live codi
     </sheets>
 </T3DataStructure>
 ````
+
+## lesson 13 
+Registering FlexForms
+need to edit the ext_tables.php file
+
+Absolute paths
+* EXT: to typo3conf/ext
+* FILE:EXT: to a file in typo3conf/ext
+* LLL:EXT: to a language file file in typo3conf/ext
+
+````php
+    $pluginSignature = 'memory_game';
+    $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
+     // Add path to the Flexform
+     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature,
+      'FILE:EXT:memory/Configuration/Flexforms/Game.xml');
+````
