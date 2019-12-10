@@ -1,0 +1,19 @@
+{
+    "name": "slaleye/memory-game-fluid-theme",
+    "type": "typo3-cms-extension",
+    "description": "Memory Game fluid theme from sitepackage",
+    "homepage": "https://slaleye.com",
+    "license": ["GPL-2.0-or-later"],
+    "keywords": ["TYPO3 CMS"],
+    "version": "1.0.0",
+    "require": {
+        "typo3/cms-core": "^8.7",
+        "typo3/cms-rte-ckeditor": "^8.7",
+        "typo3/cms-fluid-styled-content": "^8.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Slaleye\\MemoryGameFluidTheme\\": "Classes/"
+        }
+    }
+}

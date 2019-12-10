@@ -30,6 +30,12 @@ call_user_func(
             );
 
         }
+        // Adding a Flex Form to the extension
+        $pluginSignature = 'memory_game';
+        $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
+        // Add path to the Flexform
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature,
+            'FILE:EXT:memory/Configuration/Flexforms/Game.xml');
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('memory', 'Configuration/TypoScript', 'Memory');
 

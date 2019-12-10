@@ -9,7 +9,8 @@ plugin.{extension.shortExtensionKey}_{plugin.key} {
         layoutRootPaths.1 = {$plugin.tx_memory_game.view.layoutRootPath}
     }
     persistence {
-        storagePid = {$plugin.tx_memory_game.persistence.storagePid}
+        # Disable to force Extbase to use defined Storage PiD
+        #storagePid = {$plugin.tx_memory_game.persistence.storagePid}
         #recursive = 1
     }
     features {
@@ -70,5 +71,19 @@ module.tx_memory_tools_memoryhighscore {
         partialRootPaths.1 = {$module.tx_memory_highscore.view.partialRootPath}
         layoutRootPaths.0 = EXT:memory/Resources/Private/Backend/Layouts/
         layoutRootPaths.1 = {$module.tx_memory_highscore.view.layoutRootPath}
+    }
+}
+
+# Include CSS and JS  for memory
+page {
+    includeCSS {
+        memory_game_style = EXT:memory/Resources/Public/Css/memory_style.css
+        jquery_ui_style = EXT:memory/Resources/Public/Css/jquery-ui.css
+    }
+    includeJSFooterlibs {
+        memory_game_jquery_ui = EXT:memory/Resources/Public/JavaScript/Js/jquery-ui.min.js
+    }
+    includeJSFooter {
+        memory_game_js = EXT:memory/Resources/Public/JavaScript/Js/memory_script.js
     }
 }

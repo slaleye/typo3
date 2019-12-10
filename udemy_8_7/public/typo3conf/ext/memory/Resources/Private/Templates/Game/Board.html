@@ -1,0 +1,18 @@
+<html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:layout name="Default" />
+
+	<f:section name="content">
+		<h1>Listing for Cards</h1>
+		<f:flashMessages />
+		<div class="row">
+			<f:for each="{cards}" as="card" key="cardID">
+				<div class="col-sm-3">
+					<f:image src="{settings.coverImage}" treatIdAsReference="1" title="{f:translate(key:'tx_memory_domain_model_highscore.flipcard')}" class="memory-card memory-cover"></f:image>
+					<f:image  src="{card.card.uid}" treatIdAsReference="1" title="{f:translate(key:'tx_memory_domain_model_highscore.flipcard')}"
+							 class="memory-card" additionalAttributes="{data-uid: card.uid, data-index: cardID}"></f:image>
+				</div>
+			</f:for>
+		</div>
+		<f:render partial="Game/HighscoreForm"></f:render>
+	</f:section>
+</html>
