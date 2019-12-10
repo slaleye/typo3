@@ -200,3 +200,46 @@ Absolute paths
      \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature,
       'FILE:EXT:memory/Configuration/Flexforms/Game.xml');
 ````
+
+## Lesson 17 : Creating partials
+
+Partial folder defined in the  ext/memory/Configuration/TypoScript/setup.ts
+
+````
+    partialRootPaths.0 = EXT:memory/Resources/Private/Partials/
+    partialRootPaths.1 = {$plugin.tx_memory_game.view.partialRootPath}
+````
+Place partial in folder Resources/Private/Partials
+- Create a partial  in Game/HisghscoreProfile.html
+Partial are rendered using: 
+````
+<f:render partial="Game/HighscoreForm"></f:render>
+````
+
+
+In the partial create a fluid form 
+
+````xml
+<div id="highscore-form" title="{f:translate(key:'highscore-form-title')}">
+        <f:form action="saveHighscoreForm" object="{highscore}">
+            <fieldset>
+                <f:form.textfield id="highscore-form-username" property="username"
+                value="" placeholder="{f:translate(key:'highscore-form-username')}" />
+            </fieldset>
+        </f:form>
+    </div>
+````
+
+By using property username, it will automatically be set to required as defined in the 
+Highscore Model
+
+`````php
+    /**
+     * username
+     * 
+     * @var string
+     * @validate NotEmpty
+     */
+    protected $username = '';
+
+`````

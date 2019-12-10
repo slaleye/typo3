@@ -78,6 +78,7 @@ module.tx_memory_tools_memoryhighscore {
 page {
     includeCSS {
         memory_game_style = EXT:memory/Resources/Public/Css/memory_style.css
+        jquery_ui_style = EXT:memory/Resources/Public/Css/jquery-ui.css
     }
     includeJSFooterlibs {
         memory_game_jquery_ui = EXT:memory/Resources/Public/JavaScript/Js/jquery-ui.min.js
