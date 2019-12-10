@@ -231,7 +231,8 @@ In the partial create a fluid form
 ````
 
 By using property username, it will automatically be set to required as defined in the 
-Highscore Model
+Highscore Model,default controlller is Game as in Partials/Game ??
+
 
 `````php
     /**
@@ -243,3 +244,9 @@ Highscore Model
     protected $username = '';
 
 `````
+
+## Lesson 18 Saving the form
+Go to controller GameController 
+add saveHighscoreForm method
+Create Template and Partial files
+Register Action in plugin ext_localconf

@@ -26,6 +26,14 @@ class GameController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     protected $cardsRepository = null;
 
     /**
+     * highscoreRepository
+     *
+     * @var \Slaleye\Memory\Domain\Repository\HighscoreRepository
+     * @inject
+     */
+    protected $highscoreRepository = null;
+
+    /**
      * action board  // as in Game => board
      *
      * @return void
@@ -46,5 +54,24 @@ class GameController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 
         //Assign Shuffled cards to the view
         $this->view->assign('cards', $cards);
+    }
+
+    /**
+     * SAve highscore via Ajax
+     * @param \Slaleye\Memory\Domain\Model\Highscore $highscore
+     * @throws
+     */
+    public function saveHighscoreFormAction(\Slaleye\Memory\Domain\Model\Highscore $highscore)
+    {
+        // Save Data to database
+        $this->highscoreRepository->add($highscore);
+
+        // User feedback
+        $jsonResponse = [
+          'state' => 'success'
+        ];
+
+        // Add to view
+        $this->view->assign('json', json_encode($jsonResponse));
     }
 }
