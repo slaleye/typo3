@@ -248,5 +248,51 @@ Highscore Model,default controlller is Game as in Partials/Game ??
 ## Lesson 18 Saving the form
 Go to controller GameController 
 add saveHighscoreForm method
+saveHighscoreFormAction
+````php
+<?php
+  public function saveHighscoreFormAction(\Slaleye\Memory\Domain\Model\Highscore $highscore)
+    {
+        // Save Data to database
+        $this->highscoreRepository->add($highscore);
+        // User feedback
+        $jsonResponse = [
+          'state' => 'success'
+        ];
+        // Add to view
+        $this->view->assign('json', json_encode($jsonResponse));
+    }
+
+````
 Create Template and Partial files
+
+Layout : Ajax.html
+````xml
+<html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:render section="content" />
+</html>
+````
+
+Template : SaveHighscoreForm.html
+````xml
+<f:layout name="Ajax"/>
+<f:section name="content">
+    <f:format.raw>{json}</f:format.raw>
+</f:section>
+````
 Register Action in plugin ext_localconf
+````php
+<?php
+   \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+            'Slaleye.Memory',
+            'Game',
+            [
+                'Game' => 'board,saveHighscoreForm'
+            ],
+            // non-cacheable actions
+            [
+                'Game' => 'board,saveHighscoreForm'
+            ]
+        );
+
+````
