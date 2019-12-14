@@ -296,3 +296,21 @@ Register Action in plugin ext_localconf
         );
 
 ````
+
+## Lesson 19 Validators
+
+Add custom validato in 
+Classes/Domain/Validator
+it extends TYPO3\CMS\Extbase\Validation\Validator\AbstractValidator;
+Implements isValid  function.
+can be used in Controller with phpdoc
+@validate
+````
+   /**
+     * SAve highscore via Ajax
+     * @param \Slaleye\Memory\Domain\Model\Highscore $highscore
+     * @validate $highscore \Slaleye\Memory\Domain\Validator\HighscoreValidator
+     * @throws
+     */
+
+````

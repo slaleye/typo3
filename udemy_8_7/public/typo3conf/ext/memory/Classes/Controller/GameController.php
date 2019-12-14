@@ -59,6 +59,7 @@ class GameController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     /**
      * SAve highscore via Ajax
      * @param \Slaleye\Memory\Domain\Model\Highscore $highscore
+     * @validate $highscore \Slaleye\Memory\Domain\Validator\HighscoreValidator
      * @throws
      */
     public function saveHighscoreFormAction(\Slaleye\Memory\Domain\Model\Highscore $highscore)
