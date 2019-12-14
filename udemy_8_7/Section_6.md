@@ -231,7 +231,8 @@ In the partial create a fluid form
 ````
 
 By using property username, it will automatically be set to required as defined in the 
-Highscore Model
+Highscore Model,default controlller is Game as in Partials/Game ??
+
 
 `````php
     /**
@@ -243,3 +244,73 @@ Highscore Model
     protected $username = '';
 
 `````
+
+## Lesson 18 Saving the form
+Go to controller GameController 
+add saveHighscoreForm method
+saveHighscoreFormAction
+````php
+<?php
+  public function saveHighscoreFormAction(\Slaleye\Memory\Domain\Model\Highscore $highscore)
+    {
+        // Save Data to database
+        $this->highscoreRepository->add($highscore);
+        // User feedback
+        $jsonResponse = [
+          'state' => 'success'
+        ];
+        // Add to view
+        $this->view->assign('json', json_encode($jsonResponse));
+    }
+
+````
+Create Template and Partial files
+
+Layout : Ajax.html
+````xml
+<html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:render section="content" />
+</html>
+````
+
+Template : SaveHighscoreForm.html
+````xml
+<f:layout name="Ajax"/>
+<f:section name="content">
+    <f:format.raw>{json}</f:format.raw>
+</f:section>
+````
+Register Action in plugin ext_localconf
+````php
+<?php
+   \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+            'Slaleye.Memory',
+            'Game',
+            [
+                'Game' => 'board,saveHighscoreForm'
+            ],
+            // non-cacheable actions
+            [
+                'Game' => 'board,saveHighscoreForm'
+            ]
+        );
+
+````
+
+## Lesson 19 Validators
+
+Add custom validato in 
+Classes/Domain/Validator
+it extends TYPO3\CMS\Extbase\Validation\Validator\AbstractValidator;
+Implements isValid  function.
+can be used in Controller with phpdoc
+@validate
+````
+   /**
+     * SAve highscore via Ajax
+     * @param \Slaleye\Memory\Domain\Model\Highscore $highscore
+     * @validate $highscore \Slaleye\Memory\Domain\Validator\HighscoreValidator
+     * @throws
+     */
+
+````
