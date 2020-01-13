@@ -102,6 +102,6 @@ ajax {
         admPanel = 0
         debug = 0
         no_cache = 1
-        contentObjectExceptionHandler = 0
+        contentObjectExceptionHandler = 1
     }
 }
