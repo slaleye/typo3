@@ -314,3 +314,5 @@ can be used in Controller with phpdoc
      */
 
 ````
+
+Highscore currently don't appear in backend Memory folder, because they have no pid set.
