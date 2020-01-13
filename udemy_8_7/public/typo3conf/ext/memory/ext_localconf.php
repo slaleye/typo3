@@ -9,11 +9,11 @@ call_user_func(
             'Slaleye.Memory',
             'Game',
             [
-                'Game' => 'board'
+                'Game' => 'board,saveHighscoreForm'
             ],
             // non-cacheable actions
             [
-                'Game' => 'board'
+                'Game' => 'board,saveHighscoreForm'
             ]
         );
 

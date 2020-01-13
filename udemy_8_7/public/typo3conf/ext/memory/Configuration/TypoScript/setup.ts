@@ -89,3 +89,16 @@ ajax {
         contentObjectExceptionHandler = 0
     }
 }
+# Include CSS and JS  for memory
+page {
+    includeCSS {
+        memory_game_style = EXT:memory/Resources/Public/Css/memory_style.css
+        jquery_ui_style = EXT:memory/Resources/Public/Css/jquery-ui.css
+    }
+    includeJSFooterlibs {
+        memory_game_jquery_ui = EXT:memory/Resources/Public/JavaScript/Js/jquery-ui.min.js
+    }
+    includeJSFooter {
+        memory_game_js = EXT:memory/Resources/Public/JavaScript/Js/memory_script.js
+    }
+}

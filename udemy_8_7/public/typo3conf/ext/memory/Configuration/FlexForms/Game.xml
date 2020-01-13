@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:memory/Resources/Private/Language/locallang_flexform.xlf:tt_content.pi1_flexform.sheet_general</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.coverImage>
+                        <TCEforms>
+                            <label>LLL:EXT:memory/Resources/Private/Language/locallang_flexform.xlf:tt_content.pi1_flexform.sheet_general.coverImage</label>
+                            <config>
+                                <type>inline</type>
+                                <maxitems>1</maxitems>
+                                <foreign_table>sys_file_reference</foreign_table>
+                                <foreign_table_field>tablenames </foreign_table_field>
+                                <foreign_label>uid_local</foreign_label>
+                                <foreign_selector>uid_local</foreign_selector>
+                                <foreign_sortby>sorting_foreign</foreign_sortby>
+                                <foreign_selector_fieldTcaOverride type="array">
+                                    <config>
+                                        <appearance>
+                                            <elementBrowserType>file</elementBrowserType>
+                                            <elementBrowserAllowed>jpg,png</elementBrowserAllowed>
+                                        </appearance>
+                                    </config>
+                                </foreign_selector_fieldTcaOverride>
+                                <foreign_match_fields type="array">
+                                    <fieldname>image</fieldname>
+                                </foreign_match_fields>
+                                <appearance type="array">
+                                    <newRecordLinkAddTitle>1</newRecordLinkAddTitle>
+                                    <headerThumbnail>
+                                        <filed>uid_local</filed>
+                                        <height>140</height>
+                                        <width>140</width>
+                                    </headerThumbnail>
+                                </appearance>
+                            </config>
+                        </TCEforms>
+                    </settings.coverImage>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>
