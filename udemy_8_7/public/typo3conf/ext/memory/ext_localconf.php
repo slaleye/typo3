@@ -38,11 +38,15 @@ call_user_func(
     );
 		$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
 		
-			$iconRegistry->registerIcon(
-				'memory-plugin-game',
-				\TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-				['source' => 'EXT:memory/Resources/Public/Icons/user_plugin_game.svg']
-			);
-		
+        $iconRegistry->registerIcon(
+            'memory-plugin-game',
+            \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+            ['source' => 'EXT:memory/Resources/Public/Icons/user_plugin_game.svg']
+        );
+
+        // Registering GameEid
+        $GLOBALS['TYPO3_CONF_VARS']['FE']['eID_include']['GameEidController::SaveHighscore'] =
+            \Slaleye\Memory\Controller\Eid\GameEidController::class. '::saveHighscore';
+
     }
 );

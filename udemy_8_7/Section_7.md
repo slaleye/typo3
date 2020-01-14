@@ -38,3 +38,8 @@ special T3 mode, no frontend context: no user sessions, injectiosn, processing o
 uses less resources
 
 eID skips processes in normal request, so we should define the processes required for the request
+
+Create new folder in Classes\Controller\Eid
+Create abstract class EidController
+Create GameEidController that extends EidController
+Register EidController in ext_localconf
