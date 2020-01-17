@@ -2,7 +2,9 @@
 
 namespace Slaleye\Memory\Task;
 
+use TYPO3\CMS\Core\Mail\MailMessage;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Scheduler\Task\AbstractTask;
 
 class LatestHighscoreTask extends AbstractTask
@@ -58,4 +60,46 @@ class LatestHighscoreTask extends AbstractTask
         }
     }
 
+    /**
+     * @param QueryResultInterface $highscoredata
+     * @param string $adminEmailstr
+     * @return mixed
+     */
+    protected  function sendHighscoreToAdmin($highscoredata,$adminEmail)
+    {
+        $mail = GeneralUtility::makeInstance(MailMessage::class);
+        $bodyText = $this->createBodyText($highscoredata);
+        $mail->setSubject('memory: Latest Highscore');
+        $mail->setFrom(['memory@slaleye.com' => 'Slaleye']);
+        $mail->setTo(array($adminEmail));
+        $mail->setBody($bodyText); // can be HTML or plaintext
+        return $mail->send();
+    }
+
+    /**
+     * Create the email body
+     * @param QueryResultInterface $highscoredata
+     */
+    private function createBodyText($highscoredata)
+    {
+        $bodyText = '';
+        if($highscoredata){
+            $highscoreDataArray = $highscoredata->toArray();
+            /**
+             * @var \Slaleye\Memory\Domain\Model\Highscore $highscore
+             */
+            foreach ($highscoreDataArray as $highscore){
+                if(!empty($bodyText))
+                {
+                    $bodyText .= "\n\n ----------" ; //php only adds new line if you use double quotes
+                }
+                $bodyText .= ' ID: ' . $highscore->getUId();
+                $bodyText .= "\n" ;
+                $bodyText .= ' Username: ' . $highscore->getUsername();
+                $bodyText .= "\n" . $highscore->getUId();
+                $bodyText .= ' Score:' . $highscore->getSCore();
+            }
+        }
+        return $bodyText;
+    }
 }
