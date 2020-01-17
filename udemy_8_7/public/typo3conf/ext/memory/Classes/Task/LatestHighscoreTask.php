@@ -26,7 +26,9 @@ class LatestHighscoreTask extends AbstractTask
         //Ini
         $this->initialize();
         // #1 get higschore data
-        $highscoreData = $this->highscoreRepository->findAll();
+       // $highscoreData = $this->highscoreRepository->findAll();
+        $highscoreData = $this->highscoreRepository->findLatestHighscore(); //returns one
+
 
         $result = true;
         //Send data to admin
