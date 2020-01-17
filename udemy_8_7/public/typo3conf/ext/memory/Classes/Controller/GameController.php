@@ -1,6 +1,8 @@
 <?php
 namespace Slaleye\Memory\Controller;
 
+use function GuzzleHttp\json_encode;
+
 /***
  *
  * This file is part of the "Memory" Extension for TYPO3 CMS.
@@ -54,6 +56,8 @@ class GameController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 
         //Assign Shuffled cards to the view
         $this->view->assign('cards', $cards);
+        // assign eid url to the view
+        $this->view->assign('saveHighscoreUrl', $this->createEidUrl('GameEidController::SaveHighscore', 'tx_memory_game'));
     }
 
     /**
@@ -74,5 +78,25 @@ class GameController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 
         // Add to view
         $this->view->assign('json', json_encode($jsonResponse));
+    }
+
+    /**
+     * Create the url string for jquery-slavleeCom.js
+     * @param string $inEidName
+     * @param string $inArgumentName
+     * @return string
+     */
+    protected function createEidUrl($inEidName, $inArgumentName)
+    {
+        // request paramenter Eid and value eid
+        $arguments = ['eID' => $inEidName];
+        //user uriBuilder available from controllercontext
+        $uriBuilder = $this->controllerContext->getUriBuilder();
+        $uriBuilder->reset();
+        // Set ID of current page
+        $uriBuilder->setTargetPageUid($GLOBALS['TSFE']->id);
+        $uriBuilder->setArguments($arguments);
+
+        return $uriBuilder->build();
     }
 }

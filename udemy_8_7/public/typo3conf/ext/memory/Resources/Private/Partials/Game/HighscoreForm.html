@@ -1,0 +1,10 @@
+<div id="highscore-form" title="{f:translate(key:'highscore-form-title')}">
+    <f:form action="saveHighscoreForm" object="{highscore}" name="highscore" additionalParams="{type:100}">
+        <fieldset>
+            <f:form.hidden id="highscore-form-save-highscore-url" property="saveHighscoreUrl" value="{saveHighscoreUrl}" />
+            <f:form.hidden  id="highscore-form-highscore"  property="score" value="0"/>
+            <f:form.textfield id="highscore-form-username" property="username"
+            value="" placeholder="{f:translate(key:'highscore-form-username')}" />
+        </fieldset>
+    </f:form>
+</div>

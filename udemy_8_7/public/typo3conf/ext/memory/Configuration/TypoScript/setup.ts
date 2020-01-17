@@ -87,3 +87,21 @@ page {
         memory_game_js = EXT:memory/Resources/Public/JavaScript/Js/memory_script.js
     }
 }
+
+
+# Creating an Asynchronous JavaScript XML ( AJAX)  page object
+ajax = PAGE
+ajax {
+    typeNum = 100
+
+    10  < tt_content.list.20.memory_game
+
+    config {
+        disableAllHeaderCode = 1
+        xhtml_cleaning = 0
+        admPanel = 0
+        debug = 0
+        no_cache = 1
+        contentObjectExceptionHandler = 1
+    }
+}
