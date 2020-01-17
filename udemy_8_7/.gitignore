@@ -4,3 +4,4 @@
 nbproject
 /vendor
 /public/typo3conf/ext/extension_builder
+/public/typo3conf/ext/memory_game_fluid_theme/.editorconfig
