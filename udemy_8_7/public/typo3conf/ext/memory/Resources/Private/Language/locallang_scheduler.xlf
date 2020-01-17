@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-12-05T23:42:33Z" product-name="memory">
+		<header/>
+		<body>
+			<trans-unit id="scheduler.latestHighscore.title">
+				<source>Send Latest Highscore</source>
+			</trans-unit>
+			<trans-unit id="scheduler.latestHighscore.description">
+				<source>Send Latest Highscore from Memory as email to admin.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

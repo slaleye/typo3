@@ -48,5 +48,13 @@ call_user_func(
         $GLOBALS['TYPO3_CONF_VARS']['FE']['eID_include']['GameEidController::SaveHighscore'] =
             \Slaleye\Memory\Controller\Eid\GameEidController::class. '::saveHighscore';
 
+        // Registering Scheduler Task
+        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks']['Slaleye\Memory\Task\LatestHighscoreTask'] =
+            array(
+                'extension' => 'memory',
+                'title' => 'LLL:EXT:memory/Resources/Private/Language/locallang_scheduler.xlf:scheduler.latestHighscore.title',
+                'description' => 'LLL:EXT:memory/Resources/Private/Language/locallang_scheduler.xlf:scheduler.latestHighscore.description',
+
+            );
     }
 );
