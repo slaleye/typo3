@@ -57,6 +57,11 @@ class LatestHighscoreTask extends AbstractTask
             $objectManager = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Object\ObjectManager::class);
             // Use objectManager to get instance of HighscoreRepository
             $this->highscoreRepository = $objectManager->get(\Slaleye\Memory\Domain\Repository\HighscoreRepository::class);
+            // Disable the findAll query to look into a specific storage pid by setting the settings to false
+            $querySettings = $this->highscoreRepository->createQuery()->getQuerySettings();
+            $querySettings->setRespectStoragePage(false);
+            $this->highscoreRepository->setDefaultQuerySettings($querySettings);
+
         }
     }
 
@@ -68,12 +73,16 @@ class LatestHighscoreTask extends AbstractTask
     protected  function sendHighscoreToAdmin($highscoredata,$adminEmail)
     {
         $mail = GeneralUtility::makeInstance(MailMessage::class);
+
         $bodyText = $this->createBodyText($highscoredata);
         $mail->setSubject('memory: Latest Highscore');
         $mail->setFrom(['memory@slaleye.com' => 'Slaleye']);
         $mail->setTo(array($adminEmail));
         $mail->setBody($bodyText); // can be HTML or plaintext
-        return $mail->send();
+        echo '<br><br><br><br><h4>'.($bodyText).')</h4>';
+       // return $mail->send();
+        return 'OK';
+
     }
 
     /**
