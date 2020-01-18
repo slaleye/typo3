@@ -32,6 +32,10 @@ class HighscoreController extends ActionController
         // Will make repository show all the objects regardless of their storage page
         $querySettings = $this->highscoreRepository->createQuery()->getQuerySettings();
         $querySettings->setRespectStoragePage(false);
+        // Reorder the result by score
+        $this->highscoreRepository->setDefaultOrderings([
+            'score' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING
+        ]);
         $this->highscoreRepository->setDefaultQuerySettings($querySettings);
     }
     public function leaderBoardAction()
@@ -48,7 +52,7 @@ class HighscoreController extends ActionController
                 \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO
             );
         }
-        DebugUtility::debug($highscores->toArray()); // TYPO3 debugger  uses current namespace to print out variable
+      //  DebugUtility::debug($highscores->toArray()); // TYPO3 debugger  uses current namespace to print out variable
         //assign highscore to view
         $this->view->assign('highscores',$highscores);
 

@@ -60,6 +60,7 @@ plugin.tx_memory._CSS_DEFAULT_STYLE (
 )
 
 # Module configuration
+# name of module_sub moodule_name of action module
 module.tx_memory_tools_memoryhighscore {
     persistence {
         storagePid = {$module.tx_memory_highscore.persistence.storagePid}
