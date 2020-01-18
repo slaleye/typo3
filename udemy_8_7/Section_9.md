@@ -12,3 +12,16 @@ Creating a Backend Module:
  * Layout
  * Templates
  * Partials
+ 
+ ### 29 Registering module and creating controller
+ 
+ Module registered in ext_table
+
+Controller,
+no need to intialize repository, just use @inject
+
+Debug utility for typo3
+
+    DebugUtility::debug($highscores->toArray()); 
+    
+ 
