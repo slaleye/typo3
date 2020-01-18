@@ -40,17 +40,22 @@ class HighscoreController extends ActionController
     }
     public function leaderBoardAction()
     {
+        // Debug tips to narrow down error
+        DebugUtility::debug(__CLASS__.'::'.__FUNCTION__.'::'.__LINE__);
         //fetch all highscore data from repository
         $highscores = $this->highscoreRepository->findAll(); // By using @inject there is no need to intiliaze the repository
         // check if any data was in the db
         if($highscores->count() == 0)
         {
+         //   DebugUtility::debug(__CLASS__.'::'.__FUNCTION__.'::'.__LINE__);
             // print empty message , typo3 method to alert user
             $this->addFlashMessage(
                 LocalizationUtility::translate('module.highscore.no_entries', $this->extensionName),
                 '',
                 \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO
             );
+        }else{
+         //   DebugUtility::debug(__CLASS__.'::'.__FUNCTION__.'::'.__LINE__);
         }
       //  DebugUtility::debug($highscores->toArray()); // TYPO3 debugger  uses current namespace to print out variable
         //assign highscore to view
