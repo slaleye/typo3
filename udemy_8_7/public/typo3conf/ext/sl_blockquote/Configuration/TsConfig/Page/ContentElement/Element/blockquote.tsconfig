@@ -1,0 +1,13 @@
+mod.wizards.newContentElement.wizardItems.common {
+    elements {
+        slaleye_blockquote {
+            iconIdentifier = ext-slblockquote-content-blockquote-icon
+            title = LLL:EXT:sl_blockquote/Resources/Private/Language/locallang.xlf:content_element.blockquote
+            description = LLL:EXT:sl_blockquote/Resources/Private/Language/locallang.xlf:content_element.blockquote.description
+            tt_content_defValues {
+                CType = slblockquote_blockquote
+            }
+        }
+    }
+    show := addToList(slblockquote_blockquote)
+}
