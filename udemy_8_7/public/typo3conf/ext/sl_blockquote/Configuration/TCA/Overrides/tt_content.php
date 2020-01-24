@@ -1,6 +1,17 @@
 <?php
 defined('TYPO3_MODE') || die('Access denied.');
 
+// Adds the content element to the "Type" dropdown
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
+    [
+        'LLL:EXT:sl_blockquote/Resources/private/Language/locallang.xlf:content_element.blockquote',
+        'slblockquote_blockquote',
+        'EXT:sl_blockquote/Resources/public/Icons/content_blockquote_icon.svg',
+    ],
+    'CType',
+    'sl_blockquote'
+);
+
 // Configure the default backend fields for the content element
 $GLOBALS['TCA']['tt_content']['types']['slblockquote_blockquote'] = [
     'showitem' => '
