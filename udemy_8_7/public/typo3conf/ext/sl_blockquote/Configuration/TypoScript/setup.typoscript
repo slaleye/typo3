@@ -1,0 +1,14 @@
+# To ensure your custom content element templates can be found you need to extend the global templateRootPaths with a path within your extension:
+lib.contentElement {
+    templateRootPaths {
+        200 = EXT:sl_blockquote/Resources/Private/Templates/
+    }
+}
+
+#Now you can register the rendering of your custom content element using a Fluid template:
+tt_content {
+    slblockquote_blockquote =< lib.contentElement
+    slblockquote_blockquote {
+        templateName = BlockquoteContentElement
+    }
+}

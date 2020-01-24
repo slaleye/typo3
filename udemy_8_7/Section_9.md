@@ -23,5 +23,20 @@ no need to intialize repository, just use @inject
 Debug utility for typo3
 
     DebugUtility::debug($highscores->toArray()); 
-    
- 
+  
+ USe debugutility to narow down errors   
+//   DebugUtility::debug(__CLASS__.'::'.__FUNCTION__.'::'.__LINE__);
+
+debug can be printed in fluid as well
+<f:debug>{variablename}</f:debug>
+
+<f:debug>{_all}</f:debug> print available variable for fluid
+
+itn Typo3 Templates tools
+Setup :
+page.config.contentObjectExceptionHandler = 0
+to print stack trace of errors !! not in dev env
+
+Can also set in the backend
+all config
+[SYS][devIPmask] to print out dev output to user with those IPs
