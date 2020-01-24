@@ -1,0 +1,37 @@
+<html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+	<f:section name="content">
+		<h1>Highscore</h1>
+		<f:flashMessages /> <!-- Inc case the controller sends any flash message $this->addFlashMessage( -->
+		<table class="tx_memory table table-striped">
+			<thead>
+				<tr>
+					<th><f:translate key="module.highscore.rank"/></th>
+					<th><f:translate key="tx_memory_domain_model_highscore.username"/></th>
+					<th><f:translate key="tx_memory_domain_model_highscore.score"/></th>
+				</tr>
+			</thead>
+			<tbody>
+				<f:for each="{highscores}" as="highscore" iteration="iterator">
+					<tr>
+						<td>{iterator.cycle}</td>
+						<td>{highscore.username}</td>
+						<td>{highscore.score}</td>
+					</tr>
+				</f:for>
+			</tbody>
+		</table>
+	</f:section>
+</html>

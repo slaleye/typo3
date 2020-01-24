@@ -17,13 +17,13 @@ call_user_func(
                 'Slaleye.Memory',
                 'tools', // Make module a submodule of 'tools'
                 'highscore', // Submodule key
-                '', // Position
+                '', // Position for sorting order, left empty to append to the end
                 [
-                    'Highscore' => 'leaderboard',
+                    'Highscore' => 'leaderboard', // Highscore controller to display action leaderboard in the module
                     
                 ],
                 [
-                    'access' => 'user,group',
+                    'access' => 'user,group', // Which use has access to the module
                     'icon'   => 'EXT:memory/Resources/Public/Icons/user_mod_highscore.svg',
                     'labels' => 'LLL:EXT:memory/Resources/Private/Language/locallang_highscore.xlf',
                 ]
